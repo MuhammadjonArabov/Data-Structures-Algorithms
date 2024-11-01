@@ -18,6 +18,20 @@ print(solution.twoSum([1, 2, 3, 4, 5, 6], 9))
 print(solution.twoSum([11, 2, 3, 41, 52, 63], 5))
 print(solution.twoSum([13, 25, 39, 40, 55, 6], 19))
 
-#======================================================================================================================
+# ======================================================================================================================
 
 '''2. Given an integer x, return true if x is a palindrome and false otherwise.'''
+
+
+class Solution1():
+    def isPalindrome(self, x):
+        if x < 0:
+            return False
+        str_x = str(x)
+        return str_x == str_x[::-1]
+
+
+solution1 = Solution1()
+print(solution1.isPalindrome(121))
+print(solution1.isPalindrome(12))
+print(solution1.isPalindrome(1221))
