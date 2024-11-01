@@ -22,7 +22,6 @@ print(solution.twoSum([13, 25, 39, 40, 55, 6], 19))
 
 '''2. Given an integer x, return true if x is a palindrome and false otherwise.'''
 
-
 class Solution1():
     def isPalindrome(self, x):
         if x < 0:
