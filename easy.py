@@ -38,7 +38,7 @@ print(solution9.isPalindrome(1221))
 # ======================================================================================================================
 
 '''
-Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+13 Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
 Symbol       Value
 I             1
@@ -73,7 +73,6 @@ class Solution13():
         prev_value = 0
         for char in reversed(s):
             value = roman_values[char]
-            print(value)
             if value < prev_value:
                 total -= value
             else:
@@ -82,4 +81,4 @@ class Solution13():
         return total
 
 solution13 = Solution13()
-print(solution13.romanToInt('IV'))
+print(solution13.romanToInt('VI'))
