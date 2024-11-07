@@ -8,7 +8,7 @@ You can return the answer in any order. '''
 class Solution():
     def twoSum(self, nums, target):
         for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
+            for j in range(i + 1, len(nums)):
                 if nums[i] + nums[j] == target:
                     return [i, j]
 
@@ -22,6 +22,7 @@ print(solution.twoSum([13, 25, 39, 40, 55, 6], 19))
 
 '''9. Given an integer x, return true if x is a palindrome and false otherwise.'''
 
+
 class Solution9():
     def isPalindrome(self, x):
         if x < 0:
@@ -34,7 +35,6 @@ solution9 = Solution9()
 print(solution9.isPalindrome(121))
 print(solution9.isPalindrome(12))
 print(solution9.isPalindrome(1221))
-
 
 # ======================================================================================================================
 
@@ -59,6 +59,7 @@ C can be placed before D (500) and M (1000) to make 400 and 900.
 Given a roman numeral, convert it to an integer.
 '''
 
+
 class Solution13():
     def romanToInt(self, s):
         roman_values = {
@@ -81,10 +82,11 @@ class Solution13():
             prev_value = value
         return total
 
+
 solution13 = Solution13()
 print(solution13.romanToInt('IV'))
 
-#=======================================================================================================================
+# =======================================================================================================================
 
 '''14. Write a function to find the longest common prefix string amongst an array of strings.
 
@@ -93,19 +95,47 @@ If there is no common prefix, return an empty string "".'''
 
 class Solution14():
     def longestCommonPrefix(self, strs):
-      if not strs:
-          return ""
+        if not strs:
+            return ""
 
-      prefix = strs[0]
+        prefix = strs[0]
 
-      for i in strs[1:]:
-          while not i.startswith(prefix):
-              prefix = prefix[:-1]
-              if not prefix:
-                  return ""
-      return prefix
+        for i in strs[1:]:
+            while not i.startswith(prefix):
+                prefix = prefix[:-1]
+                if not prefix:
+                    return ""
+        return prefix
+
 
 solution14 = Solution14()
 print(solution14.longestCommonPrefix(['olma', 'olcha', 'olxora']))
 print(solution14.longestCommonPrefix(['olma', 'olcha', 'shaftoli']))
 
+# =======================================================================================================================
+
+'''Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.'''
+
+
+class Solution20():
+    def isValid(self, s):
+        char_oll = {')': '(', '}': '{', ']': '['}
+        stack = []
+        for i in s:
+            if i in char_oll:
+                top_char = stack.pop() if stack else None
+                if char_oll[i] != top_char:
+                    return False
+            else:
+                stack.append(i)
+        return not stack
+
+solution20 = Solution20()
+print(solution20.isValid('()[]'))
+print(solution20.isValid('()]'))
