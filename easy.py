@@ -139,3 +139,23 @@ class Solution20():
 solution20 = Solution20()
 print(solution20.isValid('()[]'))
 print(solution20.isValid('()]'))
+
+
+#=======================================================================================================================
+
+'''You are given the heads of two sorted linked lists list1 and list2.
+
+Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.'''
+
+class Solution21():
+    def mergeTwoLists(self, list1, list2):
+        if list1 == [] and list2 == []:
+            return []
+        list3 = list1 + list2
+        sort_list = sorted(list3)
+        return sort_list
+
+solution21 = Solution21()
+print(solution21.mergeTwoLists([1, 3, 5, 7], [23, 6, 1, 9]))
+print(solution21.mergeTwoLists([], []))
+
