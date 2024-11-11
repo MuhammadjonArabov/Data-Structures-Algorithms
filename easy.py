@@ -136,26 +136,62 @@ class Solution20():
                 stack.append(i)
         return not stack
 
+
 solution20 = Solution20()
 print(solution20.isValid('()[]'))
 print(solution20.isValid('()]'))
 
-
-#=======================================================================================================================
+# =======================================================================================================================
 
 '''You are given the heads of two sorted linked lists list1 and list2.
 
 Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.'''
 
+
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 class Solution21():
     def mergeTwoLists(self, list1, list2):
-        if list1 == [] and list2 == []:
-            return []
-        list3 = list1 + list2
-        sort_list = sorted(list3)
-        return sort_list
+        dummy = ListNode()
+        current = dummy
+        while list1 and list2:
+            if list1.val < list2.val:
+                current.next = list1
+                list1 = list1.next
+            else:
+                current.next = list2
+                list2 = list2.next
+            current = current.next
+        if list1:
+            current.next = list1
+        if list2:
+            current.next = list2
+        return dummy.next
+
+def list_to_linkedlist(lst):
+    dummy = ListNode()
+    current = dummy
+    for value in lst:
+        current.next = ListNode(value)
+        current = current.next
+    return dummy.next
+
+def linkedlist_to_list(node):
+    result = []
+    while node:
+        result.append(node.val)
+        node = node.next
+    return result
 
 solution21 = Solution21()
-print(solution21.mergeTwoLists([1, 3, 5, 7], [23, 6, 1, 9]))
-print(solution21.mergeTwoLists([], []))
+list1 = list_to_linkedlist([2, 4, 6, 7, 9])
+list2 = list_to_linkedlist([2, 6, 1, 9, 10])
 
+merged_list = solution21.mergeTwoLists(list1, list2)
+print(linkedlist_to_list(merged_list))
+
+empty_merged_list = solution21.mergeTwoLists(list_to_linkedlist([]), list_to_linkedlist([]))
+print(linkedlist_to_list(empty_merged_list))
