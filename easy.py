@@ -228,5 +228,5 @@ class Solution26():
         return i + 1
 
 solution26 = Solution26()
-#print(solution26.removeDuplicates([1, 1, 2]))
+print(solution26.removeDuplicates([1, 1, 2]))
 print(solution26.removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
