@@ -221,11 +221,12 @@ class Solution26():
         i = 0
 
         for j in range(1, len(nums)):
+            print(i, j, 9999999)
             if nums[j] != nums[i]:
                 i += 1
                 nums[i] = nums[j]
         return i + 1
 
 solution26 = Solution26()
-print(solution26.removeDuplicates([1, 1, 2]))
+#print(solution26.removeDuplicates([1, 1, 2]))
 print(solution26.removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
