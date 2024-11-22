@@ -49,9 +49,12 @@ L             50
 C             100
 D             500
 M             1000
-For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
+For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is 
+simply X + II. The number 27 is written as XXVII, which is XX + V + II.
 
-Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. 
+Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same 
+principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
 
 I can be placed before V (5) and X (10) to make 4 and 9. 
 X can be placed before L (50) and C (100) to make 40 and 90. 
@@ -226,11 +229,12 @@ class Solution26():
                 nums[i] = nums[j]
         return i + 1
 
-solution26 = Solution26()
-print(solution26.removeDuplicates([1, 1, 2]))
-print(solution26.removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
 
-#=======================================================================================================================
+solution26 = Solution26()
+print(solution26.removeDuplicates([1, 1, 2])) # 2
+print(solution26.removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])) # 5
+
+# =======================================================================================================================
 
 '''27. Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the 
 elements may be changed. Then return the number of elements in nums which are not equal to val.
@@ -242,6 +246,7 @@ Change the array nums such that the first k elements of nums contain the element
 The remaining elements of nums are not important as well as the size of nums.
 Return k'''
 
+
 class Solution27(object):
     def removeElement(self, nums, val):
         k = 0
@@ -251,8 +256,32 @@ class Solution27(object):
                 k += 1
         return k
 
+
 solution27 = Solution27()
 nums = [3, 2, 2, 3]
 k = solution27.removeElement(nums, 3)
-print(k, ',', nums[:k])
+print(k, ',', nums[:k]) # 2, [2, 2]
+
+# =======================================================================================================================
+
+'''28. Given two strings needle and haystack, return the index of the first occurrence of needle in haystack,
+ or -1 if needle is not part of haystack.
+'''
+
+
+class Solution28(object):
+    def strStr(self, haystack, needle):
+        if not needle:
+            return 0
+
+        for i in range(len(haystack) - len(needle) + 1):
+            if haystack[i:i + len(needle)] == needle:
+                return i
+
+        return -1
+
+
+solution28 = Solution28()
+print(solution28.strStr("sadbutsad", "sad"))  # 0
+print(solution28.strStr("leetcode", "leeto"))  # -1
 
