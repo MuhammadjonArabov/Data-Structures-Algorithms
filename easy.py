@@ -5,7 +5,7 @@ You may assume that each input would have exactly one solution, and you may not 
 You can return the answer in any order. '''
 
 
-class Solution():
+class Solution(object):
     def twoSum(self, nums, target):
         for i in range(len(nums)):
             for j in range(i + 1, len(nums)):
@@ -23,7 +23,7 @@ print(solution.twoSum([13, 25, 39, 40, 55, 6], 19))
 '''9. Given an integer x, return true if x is a palindrome and false otherwise.'''
 
 
-class Solution9():
+class Solution9(object):
     def isPalindrome(self, x):
         if x < 0:
             return False
@@ -63,7 +63,7 @@ Given a roman numeral, convert it to an integer.
 '''
 
 
-class Solution13():
+class Solution13(object):
     def romanToInt(self, s):
         roman_values = {
             'I': 1,
@@ -96,7 +96,7 @@ print(solution13.romanToInt('IV'))
 If there is no common prefix, return an empty string "".'''
 
 
-class Solution14():
+class Solution14(object):
     def longestCommonPrefix(self, strs):
         if not strs:
             return ""
@@ -126,7 +126,7 @@ Open brackets must be closed in the correct order.
 Every close bracket has a corresponding open bracket of the same type.'''
 
 
-class Solution20():
+class Solution20(object):
     def isValid(self, s):
         char_oll = {')': '(', '}': '{', ']': '['}
         stack = []
@@ -157,7 +157,7 @@ class ListNode(object):
         self.next = next
 
 
-class Solution21():
+class Solution21(object):
     def mergeTwoLists(self, list1, list2):
         dummy = ListNode()
         current = dummy
@@ -216,7 +216,7 @@ present in nums initially. The remaining elements of nums are not important as w
 Return k.'''
 
 
-class Solution26():
+class Solution26(object):
     def removeDuplicates(self, nums):
         if not nums:
             return 0
