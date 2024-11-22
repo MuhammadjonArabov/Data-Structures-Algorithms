@@ -221,7 +221,6 @@ class Solution26():
         i = 0
 
         for j in range(1, len(nums)):
-            print(i, j, 9999999)
             if nums[j] != nums[i]:
                 i += 1
                 nums[i] = nums[j]
