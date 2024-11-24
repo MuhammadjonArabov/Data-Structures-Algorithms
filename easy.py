@@ -294,7 +294,7 @@ You must write an algorithm with O(log n) runtime complexity.
 
 '''
 
-class Solution(object):
+class Solution35(object):
     def searchInsert(self, nums, target):
         low, high = 0, len(nums) - 1
         while low <= high:
@@ -307,4 +307,22 @@ class Solution(object):
                 high = mid - 1
         return low
 
-#======================================================================================================================
+solution35 = Solution35()
+print(solution35.searchInsert([1, 2, 3, 4, 5, 6, 7, 8], 6))
+print(solution35.searchInsert([1, 2, 3, 5, 6, 7, 8], 4))
+
+#=======================================================================================================================
+
+'''Given a string s consisting of words and spaces, return the length of the last word in the string.
+
+A word is a maximal substring consisting of non-space characters only.'''
+
+class Solution58(object):
+    def lengthOfLastWord(self, s):
+        x = s.split()[-1]
+        return len(x)
+
+solution58 = Solution58()
+print(solution58.lengthOfLastWord("Hello World"))
+print(solution58.lengthOfLastWord("fly me   to   the moon"))
+
