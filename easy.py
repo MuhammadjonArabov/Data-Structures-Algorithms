@@ -231,8 +231,8 @@ class Solution26(object):
 
 
 solution26 = Solution26()
-print(solution26.removeDuplicates([1, 1, 2])) # 2
-print(solution26.removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])) # 5
+print(solution26.removeDuplicates([1, 1, 2]))  # 2
+print(solution26.removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))  # 5
 
 # =======================================================================================================================
 
@@ -260,7 +260,7 @@ class Solution27(object):
 solution27 = Solution27()
 nums = [3, 2, 2, 3]
 k = solution27.removeElement(nums, 3)
-print(k, ',', nums[:k]) # 2, [2, 2]
+print(k, ',', nums[:k])  # 2, [2, 2]
 
 # =======================================================================================================================
 
@@ -285,3 +285,16 @@ solution28 = Solution28()
 print(solution28.strStr("sadbutsad", "sad"))  # 0
 print(solution28.strStr("leetcode", "leeto"))  # -1
 
+# =======================================================================================================================
+
+'''Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, 
+return the index where it would be if it were inserted in order.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+'''
+
+
+class Solution(object):
+    def searchInsert(self, nums, target):
+        pass
