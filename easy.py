@@ -3,10 +3,8 @@
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 You can return the answer in any order. '''
+import math
 from string import digits
-
-from django.db.models.fields import return_None
-
 
 class Solution(object):
     def twoSum(self, nums, target):
@@ -352,4 +350,34 @@ print(solution66.plusOne([3, 2, 3, 9]))
 
 #=======================================================================================================================
 
+'''67. IGiven two binary strings a and b, return their sum as a binary string.'''
+
+class Solution67(object):
+    def addBinary(self, a, b):
+        result = []
+        carry = 0
+
+        max_len = max(len(a), len(b))
+        a = a.zfill(max_len)
+        b = b.zfill(max_len)
+
+        for i in range(max_len -1, -1, -1):
+            bin_a = int(a[i])
+            bin_b = int(b[i])
+
+            total = bin_a + bin_b + carry
+            result.append(str(total % 2))
+            carry = total // 2
+
+        if carry:
+            result.append('1')
+
+        return ''.join(reversed(result))
+
+
+solution67 = Solution67()
+print(solution67.addBinary('11', '1'))
+print(solution67.addBinary('1101', '1001'))
+
+#=======================================================================================================================
 
