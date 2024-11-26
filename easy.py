@@ -6,6 +6,9 @@ You can return the answer in any order. '''
 import math
 from string import digits
 
+from django.db.models.lookups import Range
+
+
 class Solution(object):
     def twoSum(self, nums, target):
         for i in range(len(nums)):
@@ -381,3 +384,21 @@ print(solution67.addBinary('1101', '1001'))
 
 #=======================================================================================================================
 
+''' 70. You are climbing a staircase. It takes n steps to reach the top.
+
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+'''
+
+class Solution70(object):
+    def climbStairs(self, n):
+        if n == 1:
+            return 1
+        a, b = 1, 2
+        for i in range(3, n + 1):
+            a, b = b, a + b
+        return b
+
+solution70 = Solution70()
+print(solution70.climbStairs(2))
+print(solution70.climbStairs(8))
