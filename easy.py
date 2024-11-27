@@ -3,12 +3,6 @@
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 You can return the answer in any order. '''
-import math
-from string import digits
-
-from django.db.models.lookups import Range
-
-
 class Solution(object):
     def twoSum(self, nums, target):
         for i in range(len(nums)):
@@ -402,3 +396,40 @@ class Solution70(object):
 solution70 = Solution70()
 print(solution70.climbStairs(2))
 print(solution70.climbStairs(8))
+
+#=======================================================================================================================
+
+''' 100. Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+'''
+class TreeNode(object):
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution100(object):
+    def isSameTree(self, p, q):
+
+        if not p and not q:
+            return True
+
+        if not p or not q:
+            return False
+
+        if p.val != q.val:
+            return False
+
+        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+
+p = TreeNode(1)
+p.left = TreeNode(2)
+p.right = TreeNode(3)
+
+q = TreeNode(1)
+q.left = TreeNode(2)
+q.right = TreeNode(3)
+
+solution100 = Solution100()
+print(solution100.isSameTree(p, q))
