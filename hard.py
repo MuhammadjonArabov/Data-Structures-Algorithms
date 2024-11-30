@@ -46,3 +46,4 @@ class Solution4:
 
 solution4 = Solution4()
 print(solution4.findMedianSortedArrays([22, 23, 24], [25, 26, 27, 28, 29]))
+print(solution4.findMedianSortedArrays([22, 23, 24], [25, 26, 27, 28]))
