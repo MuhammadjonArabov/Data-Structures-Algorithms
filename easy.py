@@ -3,6 +3,8 @@
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 You can return the answer in any order. '''
+
+
 class Solution(object):
     def twoSum(self, nums, target):
         for i in range(len(nums)):
@@ -292,6 +294,7 @@ You must write an algorithm with O(log n) runtime complexity.
 
 '''
 
+
 class Solution35(object):
     def searchInsert(self, nums, target):
         low, high = 0, len(nums) - 1
@@ -305,26 +308,29 @@ class Solution35(object):
                 high = mid - 1
         return low
 
+
 solution35 = Solution35()
 print(solution35.searchInsert([1, 2, 3, 4, 5, 6, 7, 8], 6))
 print(solution35.searchInsert([1, 2, 3, 5, 6, 7, 8], 4))
 
-#=======================================================================================================================
+# =======================================================================================================================
 
 '''Given a string s consisting of words and spaces, return the length of the last word in the string.
 
 A word is a maximal substring consisting of non-space characters only.'''
+
 
 class Solution58(object):
     def lengthOfLastWord(self, s):
         x = s.split()[-1]
         return len(x)
 
+
 solution58 = Solution58()
 print(solution58.lengthOfLastWord("Hello World"))
 print(solution58.lengthOfLastWord("fly me   to   the moon"))
 
-#=======================================================================================================================
+# =======================================================================================================================
 
 '''66. You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the 
 integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer
@@ -332,22 +338,25 @@ integer. The digits are ordered from most significant to least significant in le
 
 Increment the large integer by one and return the resulting array of digits.'''
 
+
 class Solution66(object):
     def plusOne(self, digits):
-       for i in range(len(digits) - 1, -1, -1):
-           if digits[i] < 9:
-               digits[i] += 1
-               return digits
-           digits[i] = 0
-       return [1] + digits
+        for i in range(len(digits) - 1, -1, -1):
+            if digits[i] < 9:
+                digits[i] += 1
+                return digits
+            digits[i] = 0
+        return [1] + digits
+
 
 solution66 = Solution66()
 print(solution66.plusOne([1, 2, 3, 4]))
 print(solution66.plusOne([3, 2, 3, 9]))
 
-#=======================================================================================================================
+# =======================================================================================================================
 
 '''67. IGiven two binary strings a and b, return their sum as a binary string.'''
+
 
 class Solution67(object):
     def addBinary(self, a, b):
@@ -358,7 +367,7 @@ class Solution67(object):
         a = a.zfill(max_len)
         b = b.zfill(max_len)
 
-        for i in range(max_len -1, -1, -1):
+        for i in range(max_len - 1, -1, -1):
             bin_a = int(a[i])
             bin_b = int(b[i])
 
@@ -376,13 +385,14 @@ solution67 = Solution67()
 print(solution67.addBinary('11', '1'))
 print(solution67.addBinary('1101', '1001'))
 
-#=======================================================================================================================
+# =======================================================================================================================
 
 ''' 70. You are climbing a staircase. It takes n steps to reach the top.
 
 Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 
 '''
+
 
 class Solution70(object):
     def climbStairs(self, n):
@@ -393,21 +403,25 @@ class Solution70(object):
             a, b = b, a + b
         return b
 
+
 solution70 = Solution70()
 print(solution70.climbStairs(2))
 print(solution70.climbStairs(8))
 
-#=======================================================================================================================
+# =======================================================================================================================
 
 ''' 100. Given the roots of two binary trees p and q, write a function to check if they are the same or not.
 
 Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
 '''
+
+
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution100(object):
     def isSameTree(self, p, q):
@@ -423,6 +437,7 @@ class Solution100(object):
 
         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
+
 p = TreeNode(1)
 p.left = TreeNode(2)
 p.right = TreeNode(3)
@@ -434,5 +449,25 @@ q.right = TreeNode(3)
 solution100 = Solution100()
 print(solution100.isSameTree(p, q))
 
+# =======================================================================================================================
+
+'''Given an array arr of integers, check if there exist two indices i and j such that :
+i != j
+0 <= i, j < arr.length
+arr[i] == 2 * arr[j]'''
+
+from typing import List
 
 
+class Solution:
+    def checkIfExist(self, arr: List[int]) -> bool:
+        for i in range(len(arr)):
+            for j in range(len(arr)):
+                print(arr[i], arr[j], 99999)
+                if arr[i] == 2*arr[j] and i != j:
+                    return True
+            return False
+
+solution = Solution()
+print(solution.checkIfExist([10,2,5,3]))
+print(solution.checkIfExist([3,1,7,11]))
