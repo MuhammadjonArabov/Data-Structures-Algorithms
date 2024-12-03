@@ -51,4 +51,23 @@ solution4 = Solution4()
 print(solution4.findMedianSortedArrays([22, 23, 24], [25, 26, 27, 28, 29]))
 print(solution4.findMedianSortedArrays([22, 23, 24], [25, 26, 27, 28]))
 
+#=======================================================================================================================
+
+'''You are given a 0-indexed string s and a 0-indexed integer array spaces that describes the indices in the original 
+string where spaces will be added. Each space should be inserted before the character at the given index.'''
+
+class Solution2119:
+    def addSpaces(self, s: str, spaces: List[int]) -> str:
+        l = []
+        prev = 0
+        for i in spaces:
+            l.append(s[prev:i])
+            prev = i
+        l.append(s[prev:])
+        return ' '.join(l)
+
+solution2119 = Solution2119()
+print(solution2119.addSpaces(s = "LeetcodeHelpsMeLearn", spaces = [8,13,15]))
+print(solution2119.addSpaces(s = "icodeinpython", spaces = [1,5,7,9]))
+
 
