@@ -3,9 +3,6 @@
 '*' Matches zero or more of the preceding element.
 The matching should cover the entire input string (not partial).
 '''
-from openpyxl.styles.builtins import percent
-from pandas.io.formats.format import return_docstring
-
 
 class Solution10(object):
     def isMatch(self, s: str, p: str) -> bool:
