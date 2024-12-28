@@ -1,5 +1,5 @@
 '''
-13. Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+13. Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.  # Time O(n). # Memory O(1)
 '''
 from typing import List
 
@@ -9,10 +9,9 @@ class Solution13:
         roman_map = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
         total = 0
         prev_value = 0
-        for char in s:  # Time O(n)
-            current_value = roman_map[char]  # Memory O(1)
+        for char in s:
+            current_value = roman_map[char]
             if current_value > prev_value:
-                print(current_value, 888)
                 total += current_value - 2 * prev_value
             else:
                 total += current_value
@@ -26,7 +25,7 @@ print(solution13.romanToInto('VII'))
 
 '''
 14. Write a function to find the longest common prefix string amongst an array of strings.
-If there is no common prefix, return an empty string "".
+If there is no common prefix, return an empty string "".   # time O(n*m), # memory O(1)
 '''
 
 
@@ -37,7 +36,7 @@ class Solution14:
 
         prefix = strs[0]
 
-        for string in strs[1:]:
+        for string in strs[1:]:                             #
             while not string.startswith(prefix):
                 prefix = prefix[:-1]
                 if not prefix:
@@ -48,3 +47,14 @@ class Solution14:
 
 solution14 = Solution14()
 print(solution14.longestCommonPrefix(["flower", "flow", "flight"]))
+
+'''
+20. Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+An input string is valid if:
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.
+'''
+class Solution20:
+    def isValid(self, s: str) -> bool:
+        pass
