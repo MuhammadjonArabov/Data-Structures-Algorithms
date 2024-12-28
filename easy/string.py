@@ -25,7 +25,7 @@ print(solution13.romanToInto('VII'))
 
 '''
 14. Write a function to find the longest common prefix string amongst an array of strings.
-If there is no common prefix, return an empty string "".   # time O(n*m), # memory O(1)
+If there is no common prefix, return an empty string "".   # time - O(n*m),  memory - O(1)
 '''
 
 
@@ -36,7 +36,7 @@ class Solution14:
 
         prefix = strs[0]
 
-        for string in strs[1:]:                             #
+        for string in strs[1:]:
             while not string.startswith(prefix):
                 prefix = prefix[:-1]
                 if not prefix:
@@ -53,8 +53,26 @@ print(solution14.longestCommonPrefix(["flower", "flow", "flight"]))
 An input string is valid if:
 Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
-Every close bracket has a corresponding open bracket of the same type.
+Every close bracket has a corresponding open bracket of the same type. time - O(n), memory - O(n)
 '''
 class Solution20:
     def isValid(self, s: str) -> bool:
-        pass
+        bracket_map = {')': '(', '}': '{', ']': '['}
+        stack = []
+
+        for char in s:
+            if char in bracket_map.values():
+                stack.append(char)
+            elif char in bracket_map.keys():
+                if stack and stack[-1] == bracket_map[char]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                return False
+        return not stack
+
+
+solution20 = Solution20()
+print(solution20.isValid("()"))
+#print(solution20.isValid("()[]{"))
