@@ -83,7 +83,7 @@ print(solution20.isValid("()[]{"))
 
 '''
 28. Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle 
-is not part of haystack.
+is not part of haystack.  time - O(n + m)      memory - O(1)
 '''
 class Solution28:
     def strStr(self, haystack: str, needle: str) -> int:
@@ -98,3 +98,12 @@ print(solution28.strStr("sadbutsad", "sad"))
 print(solution28.strStr("sadbutsad", "sadi"))
 
 
+'''58. Given a string s consisting of words and spaces, return the length of the last word in the string.'''
+
+class Solution58:
+    def lengthOfLastWord(self, s:str) -> int:
+        words = s.split()
+        return len(words[-1])
+
+solution58 = Solution58()
+print(solution58.lengthOfLastWord(" fly me   to   the moon "))
