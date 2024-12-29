@@ -3,8 +3,6 @@
 '''
 from typing import List
 
-from pandas.io.formats.format import return_docstring
-
 
 class Solution13:
     def romanToInto(self, s: str) -> int:
@@ -85,6 +83,8 @@ print(solution20.isValid("()[]{"))
 28. Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle 
 is not part of haystack.  time - O(n + m)      memory - O(1)
 '''
+
+
 class Solution28:
     def strStr(self, haystack: str, needle: str) -> int:
         index = haystack.find(needle)
@@ -93,17 +93,23 @@ class Solution28:
         else:
             return -1
 
+
 solution28 = Solution28()
 print(solution28.strStr("sadbutsad", "sad"))
 print(solution28.strStr("sadbutsad", "sadi"))
 
+'''58. Given a string s consisting of words and spaces, return the length of the last word in the string. time - O(n), memory - O(n)'''
 
-'''58. Given a string s consisting of words and spaces, return the length of the last word in the string.'''
 
 class Solution58:
-    def lengthOfLastWord(self, s:str) -> int:
+    def lengthOfLastWord(self, s: str) -> int:
         words = s.split()
         return len(words[-1])
 
+
 solution58 = Solution58()
 print(solution58.lengthOfLastWord(" fly me   to   the moon "))
+
+'''
+67. Given two binary strings a and b, return their sum as a binary string.
+'''
