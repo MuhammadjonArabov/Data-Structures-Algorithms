@@ -3,6 +3,8 @@
 '''
 from typing import List
 
+from pandas.io.formats.format import return_docstring
+
 
 class Solution13:
     def romanToInto(self, s: str) -> int:
@@ -55,6 +57,8 @@ Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
 Every close bracket has a corresponding open bracket of the same type. time - O(n), memory - O(n)
 '''
+
+
 class Solution20:
     def isValid(self, s: str) -> bool:
         bracket_map = {')': '(', '}': '{', ']': '['}
@@ -75,4 +79,22 @@ class Solution20:
 
 solution20 = Solution20()
 print(solution20.isValid("()"))
-#print(solution20.isValid("()[]{"))
+print(solution20.isValid("()[]{"))
+
+'''
+28. Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle 
+is not part of haystack.
+'''
+class Solution28:
+    def strStr(self, haystack: str, needle: str) -> int:
+        index = haystack.find(needle)
+        if index != -1 and haystack[index: index + len(needle)] == needle:
+            return index
+        else:
+            return -1
+
+solution28 = Solution28()
+print(solution28.strStr("sadbutsad", "sad"))
+print(solution28.strStr("sadbutsad", "sadi"))
+
+
