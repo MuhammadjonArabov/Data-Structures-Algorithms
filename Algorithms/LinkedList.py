@@ -15,7 +15,7 @@ class LinkedList:
             return
         temp = self.head
         while temp:
-            print(temp.data)
+            print(temp.data, end=" ")
             temp = temp.next
 
     def push(self, new_data):
