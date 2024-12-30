@@ -70,10 +70,10 @@ class LinkedList:
 
 llist = LinkedList()
 llist.head = Node("Dushaba")
-tusdey = Node("Seshanba")
-wansdey = Node("Chorshanba")
-llist.head.next = tusdey
-tusdey.next = wansdey
+tuesday = Node("Seshanba")
+wednesday = Node("Chorshanba")
+llist.head.next = tuesday
+tuesday.next = wednesday
 llist.push("Yakshanba")
 llist.insertAfter(llist.head.next, "Salom Dushanba")
 # llist.append("Payshanba")
