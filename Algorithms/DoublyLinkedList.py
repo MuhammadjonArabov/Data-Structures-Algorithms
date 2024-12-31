@@ -87,10 +87,12 @@ Llist.head = Node("1-knot")
 knot2 = Node("2-knot")
 knot3 = Node("3-knot")
 Llist.head.next = knot2
+knot2.prev = Llist.head
 knot2.next = knot3
+knot3.prev = knot2
 Llist.push("0-knot")
 Llist.insertAfter(knot2.next, "4-knot")
 Llist.deleteNode("0-knot")
-print(Llist.printList())
+Llist.printList()
 Llist.reverse()
-print(Llist.printList())
+Llist.printList()
