@@ -86,3 +86,12 @@ class CircularLinkedList:
             if temp == self.head:
                 break
         print(f"'{key}' ro'yxatda topilmadi")
+
+
+cllist = CircularLinkedList()
+cllist.push("2-knot")
+cllist.push("0-knot")
+cllist.append("4-knot")
+cllist.insertAfter(cllist.head, "1-knot")
+cllist.deleteNode("4-knot")
+cllist.printList()
