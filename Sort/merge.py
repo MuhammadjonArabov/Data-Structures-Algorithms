@@ -1,14 +1,14 @@
-def marge_sort(arr):
+def merge_sort(arr):
     if len(arr) <= 1:
         return arr
 
     mid = len(arr) // 2
-    right_arr = marge_sort(arr[mid:])
-    left_arr = marge_sort(arr[:mid])
-    return marge(left_arr, right_arr)
+    right_arr = merge_sort(arr[mid:])
+    left_arr = merge_sort(arr[:mid])
+    return merge(left_arr, right_arr)
 
 
-def marge(left, right):
+def merge(left, right):
     sorted_arr = []
     i = j = 0
 
@@ -27,7 +27,7 @@ def marge(left, right):
 
 
 arr = [78, 56, 45, 76, 89, 90, 567, 45, 12, 3, 4]
-sort = marge_sort(arr)
+sort = merge_sort(arr)
 print(sort)
 
 '''
