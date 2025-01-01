@@ -1,5 +1,6 @@
 def liner_search(arr, target):
     for i in range(len(arr)):
+        print(i)
         if i == target:
             return i
     return -1
