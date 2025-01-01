@@ -21,3 +21,8 @@ if result != -1:
     print(f"Element {target} index topildi: {result}")
 else:
     print(f"Element {target} topilmadi")
+
+
+'''
+   Big O -> time - O(1), memory - O(log n)
+'''
