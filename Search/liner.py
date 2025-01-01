@@ -11,3 +11,7 @@ if result != -1:
     print(f"Element {target} indeksda topildi: {result}")
 else:
     print(f"Element {target} topilmadi.")
+
+'''
+ Big O - >     time - O(n), memory - O(1)
+'''
