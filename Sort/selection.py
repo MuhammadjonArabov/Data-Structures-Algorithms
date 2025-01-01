@@ -6,8 +6,14 @@ def selection_sort(arr):
             if arr[j] < arr[min_index]:
                 min_index = j
         arr[i], arr[min_index] = arr[min_index], arr[i]
+
     return arr
+
 
 arr = [4, 44, 34, 56, 78, 98, 0]
 selection = selection_sort(arr)
 print(selection)
+
+'''
+Big O   -    time - O(n^2),   memory - O(1)
+'''
