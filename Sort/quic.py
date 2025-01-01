@@ -2,7 +2,7 @@ from random import randrange
 
 
 def quic_sort(arr):
-    if len(arr) < 1:
+    if len(arr) < 2:
         return arr
     else:
         n = arr.pop(randrange(len(arr)))
