@@ -154,4 +154,24 @@ class Solution205:
 
 solution205 = Solution205()
 print(solution205.isIsomorphic('add', 'off'))
-print(solution205.isIsomorphic('hello', 'off'))
+print(solution205.isIsomorphic('ofs', 'off'))
+
+'''
+242. Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+'''
+class Solution242:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        count_s, count_t = {}, {}
+
+        for i in s:
+            count_s[i] = count_s.get(i, 0) + 1
+
+        for i in t:
+            count_t[i] = count_t.get(i, 0) + 1
+
+        return count_s == count_t
+
+solution242 = Solution242()
+print(solution242.isAnagram("anagram", "nagaram"))
