@@ -3,6 +3,8 @@
 '''
 from typing import List
 
+from pandas.io.formats.format import return_docstring
+
 
 class Solution13:
     def romanToInto(self, s: str) -> int:
@@ -111,5 +113,39 @@ solution58 = Solution58()
 print(solution58.lengthOfLastWord(" fly me   to   the moon "))
 
 '''
-67. Given two binary strings a and b, return their sum as a binary string.
+125. A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all 
+non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
 '''
+
+class Solution125:
+    def isPalindrome(self, s: str) -> bool:
+        s = s.lower()
+        filter_s = ''.join(char for char in s if char.isalnum())
+        return filter_s == filter_s[::-1]
+
+solution125 = Solution125()
+print(solution125.isPalindrome("amma"))
+
+class Solution205:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        mapping_s, mapping_t = {}, {}
+        for char_s, char_t in zip(s, t):
+            if char_s in mapping_s:
+                if mapping_s[char_s] != char_t:
+                    return False
+            else:
+                mapping_s[char_s] = char_t
+
+            if char_t in mapping_t:
+                if mapping_t[char_t] != char_s:
+                    return False
+            else:
+                mapping_t[char_t] = char_s
+        return True
+
+
+solution205 = Solution205()
+print(solution205.isIsomorphic('add', 'off'))
+print(solution205.isIsomorphic('hello', 'off'))
