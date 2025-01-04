@@ -123,6 +123,12 @@ class Solution125:
         filter_s = ''.join(char for char in s if char.isalnum())
         return filter_s == filter_s[::-1]
 
+'''
+205. Given two strings s and t, determine if they are isomorphic.
+Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+All occurrences of a character must be replaced with another character while preserving the order of characters. 
+No two characters may map to the same character, but a character may map to itself.
+'''
 solution125 = Solution125()
 print(solution125.isPalindrome("amma"))
 
