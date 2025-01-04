@@ -3,8 +3,6 @@
 '''
 from typing import List
 
-from pandas.io.formats.format import return_docstring
-
 
 class Solution13:
     def romanToInto(self, s: str) -> int:
@@ -117,11 +115,13 @@ print(solution58.lengthOfLastWord(" fly me   to   the moon "))
 non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
 '''
 
+
 class Solution125:
     def isPalindrome(self, s: str) -> bool:
         s = s.lower()
         filter_s = ''.join(char for char in s if char.isalnum())
         return filter_s == filter_s[::-1]
+
 
 '''
 205. Given two strings s and t, determine if they are isomorphic.
@@ -131,6 +131,7 @@ No two characters may map to the same character, but a character may map to itse
 '''
 solution125 = Solution125()
 print(solution125.isPalindrome("amma"))
+
 
 class Solution205:
     def isIsomorphic(self, s: str, t: str) -> bool:
@@ -159,6 +160,8 @@ print(solution205.isIsomorphic('ofs', 'off'))
 '''
 242. Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 '''
+
+
 class Solution242:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
@@ -172,6 +175,7 @@ class Solution242:
             count_t[i] = count_t.get(i, 0) + 1
 
         return count_s == count_t
+
 
 solution242 = Solution242()
 print(solution242.isAnagram("anagram", "nagaram"))
