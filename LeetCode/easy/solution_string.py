@@ -4,6 +4,7 @@
 from typing import List
 
 
+
 class Solution13:
     def romanToInto(self, s: str) -> int:
         roman_map = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
@@ -179,3 +180,16 @@ class Solution242:
 
 solution242 = Solution242()
 print(solution242.isAnagram("anagram", "nagaram"))
+
+''' 
+ Big O  ->     O(n/2) - time, O(1) - memory
+'''
+def is_polindrome(string: str)-> bool:
+    start, end = 0, len(string) - 1
+    while start < end:
+        if string[start] != string[end]:
+            return False
+        start += 1
+        end -= 1
+    return True
+print(is_polindrome('aziza'))
