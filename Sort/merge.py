@@ -3,31 +3,36 @@ def merge_sort(arr):
         return arr
 
     mid = len(arr) // 2
-    right_arr = merge_sort(arr[mid:])
     left_arr = merge_sort(arr[:mid])
-    return merge(left_arr, right_arr)
+    right_arr = merge_sort(arr[mid:])
 
-
-def merge(left, right):
-    sorted_arr = []
+    result = []
     i = j = 0
 
-    while i < len(left) and j < len(right):
-        print(arr[i], arr[j])
-        if left[i] < right[j]:
-            sorted_arr.append(left[i])
+    while i < len(left_arr) and j < len(right_arr):
+        print(left_arr[i], right_arr[j])
+        if left_arr[i] < right_arr[j]:
+            result.append(left_arr[i])
             i += 1
         else:
-            sorted_arr.append(right[j])
+            result.append(right_arr[j])
             j += 1
 
-    sorted_arr.extend(left[i:])
-    sorted_arr.extend(right[j:])
+    # result.extend(left_arr[i:])
+    # result.extend(right_arr[j:])
 
-    return sorted_arr
+    while i < len(left_arr):
+        result.append(left_arr[i])
+        i += 1
+
+    while j < len(right_arr):
+        result.append(right_arr[j])
+        j += 1
+
+    return result
 
 
-arr = [78, 56, 45, 76]
+arr = [4, 2, 3, 1]
 sort = merge_sort(arr)
 print(sort)
 
