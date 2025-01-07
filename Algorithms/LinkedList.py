@@ -17,6 +17,7 @@ class LinkedList:
         while temp:
             print(temp.data, end=" ")
             temp = temp.next
+        print()
 
     def push(self, new_data):
         '''Boshiga element qo'shish'''
@@ -67,6 +68,25 @@ class LinkedList:
         prev.next = temp.next
         temp = None
 
+    def middel(self):
+        '''Ro'yxatni o'rtasidagi elementni topish'''
+        if self.head is None:
+            print("Ro'yxat bo'sh")
+        fast=slow = self.head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+        print(slow.data)
+
+    def reverse(self):
+        prev = None
+        curr = self.head
+        while curr is not None:
+            next_ = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next_
+        self.head = prev
 
 llist = LinkedList()
 llist.head = Node("Dushaba")
@@ -75,7 +95,9 @@ wednesday = Node("Chorshanba")
 llist.head.next = tuesday
 tuesday.next = wednesday
 llist.push("Yakshanba")
-llist.insertAfter(llist.head.next, "Salom Dushanba")
-# llist.append("Payshanba")
-llist.deleteNode("Payshanba")
-print(llist.printList())
+# llist.insertAfter(llist.head.next, "Salom Dushanba")
+# # llist.append("Payshanba")
+# llist.deleteNode("Payshanba")
+llist.middel()
+#llist.reverse()
+llist.printList()

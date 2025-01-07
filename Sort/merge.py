@@ -13,6 +13,7 @@ def merge(left, right):
     i = j = 0
 
     while i < len(left) and j < len(right):
+        print(arr[i], arr[j])
         if left[i] < right[j]:
             sorted_arr.append(left[i])
             i += 1
@@ -26,7 +27,7 @@ def merge(left, right):
     return sorted_arr
 
 
-arr = [78, 56, 45, 76, 89, 90, 567, 45, 12, 3, 4]
+arr = [78, 56, 45, 76]
 sort = merge_sort(arr)
 print(sort)
 

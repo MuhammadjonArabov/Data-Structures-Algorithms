@@ -6,10 +6,13 @@ def bubble_sort(arr):
     return arr
 
 
-arr = [6, 3, 2, 7, 89, 67, 5, 1, 2, 3, 4, 6, 7, 8, 9]
+arr = [2, 3, 4, 6, 7, 8, 9]
 bubble = bubble_sort(arr)
 print(bubble)
 
 '''
-  Big O      -         time - O(n^2),       memory - O(1)
+  Big O      - >        time - O(n^2),       memory - O(1)
 '''
+
+
+
