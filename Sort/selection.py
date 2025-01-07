@@ -3,6 +3,7 @@ def selection_sort(arr):
     for i in range(n):
         min_index = i
         for j in range(i + 1, n):
+            print(arr[i], arr[j])
             if arr[j] < arr[min_index]:
                 min_index = j
         arr[i], arr[min_index] = arr[min_index], arr[i]
