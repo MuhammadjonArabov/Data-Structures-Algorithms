@@ -79,6 +79,7 @@ class LinkedList:
         print(slow.data)
 
     def reverse(self):
+        '''Ro'yxatni teskari qilish'''
         prev = None
         curr = self.head
         while curr is not None:
