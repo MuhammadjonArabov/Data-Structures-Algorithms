@@ -24,6 +24,7 @@ def merge_two_arrays(arr1: list[int], arr2: list[int]) -> Iterable[int]:
 print(list(merge_two_arrays([1, 2, 3, 4, 5], [2, 3, 6, 7, 8, 9])))
 
 # -----------------------------------------------------------------------------------------------------------------------
+''' Time : O(n**2),    Memory: O(n**2) '''
 
 
 def generate(numRows):
@@ -33,7 +34,22 @@ def generate(numRows):
         for j in range(1, i):
             row[j] = arr[i - 1][j - 1] + arr[i - 1][j]
         arr.append(row)
-    return arr
+    return arr[-1]
 
 
 print(generate(5))
+
+
+# -----------------------------------------------------------------------------------------------------------------------
+
+def getRow(rowIndex):
+    row = [1] * (rowIndex + 1)
+
+    for i in range(1, rowIndex):
+        for j in range(i, 0, -1):
+            row[j] += row[j - 1]
+    return row
+
+print(3)
+
+
