@@ -1,3 +1,4 @@
+from itertools import count
 from typing import Iterable
 
 
@@ -72,10 +73,37 @@ def f(son):
     r = 0
     for i in son:
         r ^= i
-        print(r, 'doc')
     return r
 
 print(f([2,2,1]))
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+def majorityElement(nums):
+    majority = {}
+    for i in nums:
+        if i in majority:
+            majority[i] += 1
+        else:
+            majority[i] = 1
+        return max(majority, key=majority.get)
+
+print(majorityElement([3,2,3]))
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+
+def containsNearbyDuplicate(nums, k):
+    indexes = {}
+    for i, num in enumerate(nums):
+        if num in indexes and abs(i - indexes[num]) <= k:
+            return True
+        indexes[num] = i
+    return False
+
+print(containsNearbyDuplicate([1,2,3,1], 3))
+
+
 
 
 
